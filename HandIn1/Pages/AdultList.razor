@@ -1,0 +1,41 @@
+﻿@page "/AdultList"
+@using FileData
+<h3>AdultList</h3>
+
+@inject IAdultFile adultFile
+@inject NavigationManager NavMgr
+
+
+@if (allAdults == null)
+{
+    <p>no adults in list</p>
+}
+else
+{
+    <table class="table">
+        <thead>
+        <tr>
+            <th>Id</th>
+            <th>FirstName</th>
+            <th>LastName</th>
+            <th>Age</th>
+            <th>Sex</th>
+        </tr>
+        </thead>
+        <tbody>
+        @foreach (var item in allAdults)
+        {
+            <tr>
+                <td>@item.Id</td>
+                <td>@item.FirstName</td>
+                <td>@item.LastName</td>
+                <td>@item.Age</td>
+                <td>@item.Sex</td>
+        
+            </tr>
+        }
+        </tbody>
+    </table>
+}
+
+

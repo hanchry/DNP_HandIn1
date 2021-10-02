@@ -90,7 +90,7 @@ using HandIn1.Shared;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 28 "C:\Users\hanch\OneDrive\Skola\semester3\DNP1\DNP1 programs\HandIn1\HandIn1\HandIn1\Shared\NavMenu.razor"
+#line 24 "C:\Users\hanch\OneDrive\Skola\semester3\DNP1\DNP1 programs\HandIn1\HandIn1\HandIn1\Shared\NavMenu.razor"
        
     private bool collapseNavMenu = true;
 
