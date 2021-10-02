@@ -10,23 +10,27 @@ namespace FileData
     {
         // public IList<Family> Families { get; private set; }
         public IList<Adult> Adults { get; private set; }
+        public IList<User> Users { get;}
 
         //private readonly string familiesFile = "families.json";
         private readonly string adultsFile = "adults.json";
+        private readonly string usersFile = "users.json";
 
         public FileContext()
         {
             // Families = File.Exists(familiesFile) ? ReadData<Family>(familiesFile) : new List<Family>();
-            Adults = File.Exists(adultsFile) ? ReadData<Adult>() : new List<Adult>();
+            Adults = File.Exists(adultsFile) ? ReadData<Adult>(adultsFile) : new List<Adult>();
+            Users = File.Exists(adultsFile) ? ReadData<User>(usersFile) : new List<User>();
         }
 
-        private IList<T> ReadData<T>()
+        private IList<T> ReadData<T>(string s)
         {
-            using (var jsonReader = File.OpenText(adultsFile))
+            using (var jsonReader = File.OpenText(s))
             {
                 return JsonSerializer.Deserialize<List<T>>(jsonReader.ReadToEnd());
             }
         }
+        
 
         public void SaveChanges()
         {

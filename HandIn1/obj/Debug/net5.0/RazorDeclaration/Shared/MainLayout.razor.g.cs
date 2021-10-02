@@ -82,6 +82,13 @@ using HandIn1.Shared;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 2 "C:\Users\hanch\OneDrive\Skola\semester3\DNP1\DNP1 programs\HandIn1\HandIn1\HandIn1\Shared\MainLayout.razor"
+using LoginComponent;
+
+#line default
+#line hidden
+#nullable disable
     public partial class MainLayout : LayoutComponentBase
     {
         #pragma warning disable 1998
@@ -89,6 +96,27 @@ using HandIn1.Shared;
         {
         }
         #pragma warning restore 1998
+#nullable restore
+#line 22 "C:\Users\hanch\OneDrive\Skola\semester3\DNP1\DNP1 programs\HandIn1\HandIn1\HandIn1\Shared\MainLayout.razor"
+      
+
+    [CascadingParameter]protected Task<AuthenticationState> AuthStat { get; set; }
+
+    protected override async Task OnInitializedAsync()
+    {
+        await base.OnInitializedAsync();
+        var user = (await AuthStat).User;
+        if (!user.Identity.IsAuthenticated)
+        {
+            NavigationManager.NavigateTo($"/");
+        }
+    }
+
+
+#line default
+#line hidden
+#nullable disable
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private NavigationManager NavigationManager { get; set; }
     }
 }
 #pragma warning restore 1591

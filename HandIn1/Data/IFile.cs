@@ -3,8 +3,9 @@ using Models;
 
 namespace FileData
 {
-    public interface IAdultFile
+    public interface IFileReader
     {
         IList<Adult> GetAdults();
+        IList<User> GetUsers();
     }
 }

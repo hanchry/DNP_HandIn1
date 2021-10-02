@@ -3,11 +3,11 @@ using Models;
 
 namespace FileData
 {
-    public class AdultFile:IAdultFile
+    public class FileReader:IFileReader
     {
         private FileContext FileContext;
 
-        public AdultFile()
+        public FileReader()
         {
             FileContext = new FileContext();
         }
@@ -15,6 +15,11 @@ namespace FileData
         public IList<Adult> GetAdults()
         {
             return FileContext.Adults;
+        }
+
+        public IList<User> GetUsers()
+        {
+            return FileContext.Users;
         }
     }
 }
