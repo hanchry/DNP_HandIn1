@@ -21,5 +21,11 @@ namespace FileData
         {
             return FileContext.Users;
         }
+
+        public void AddAdult(Adult adult)
+        {
+            FileContext.Adults.Add(adult);
+            FileContext.SaveChanges();
+        }
     }
 }
