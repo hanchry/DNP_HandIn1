@@ -214,13 +214,38 @@
       "JobTitle": "Call Center Agent",
       "Salary": 20308
     },
+    "Age": 0,
+    "Sex": "M",
     "Id": 14,
     "FirstName": "Isiah",
     "LastName": "Esparza",
     "HairColor": "Brown",
     "EyeColor": "Brown",
     "Weight": 81.8,
-    "Height": 172,
-    "Sex": "M"
+    "Height": 172
+  },
+  {
+    "JobTitle": null,
+    "Age": 18,
+    "Sex": "F",
+    "Id": 15,
+    "FirstName": "LSADA",
+    "LastName": "DASDADAS",
+    "HairColor": null,
+    "EyeColor": null,
+    "Weight": 0,
+    "Height": 0
+  },
+  {
+    "JobTitle": null,
+    "Age": 19,
+    "Sex": "F",
+    "Id": 16,
+    "FirstName": "DASD",
+    "LastName": "DAS",
+    "HairColor": null,
+    "EyeColor": null,
+    "Weight": 0,
+    "Height": 0
   }
 ]

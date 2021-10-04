@@ -9,8 +9,10 @@
 
     <div class="main">
         <div class="top-row px-4">
-            <Login/>
-            <a href="https://docs.microsoft.com/aspnet/" target="_blank">About</a>
+            <button id="buttons" class="btn btn-outline-dark " @onclick="(() => NavigateToLogInPage() )" >Sign In</button>
+            <button id="buttons" class="btn btn-outline-dark" @onclick="(() => NavigateToRegisterPage())" >Sign Up</button>
+                        
+            <button id="buttons" class="btn btn-outline-dark" href="https://docs.microsoft.com/aspnet/" target="_blank">About</button>
         </div>
 
         <div class="content px-4">
@@ -21,8 +23,8 @@
 
 @code{
 
-    [CascadingParameter]protected Task<AuthenticationState> AuthStat { get; set; }
-
+    [CascadingParameter]
+    protected Task<AuthenticationState> AuthStat { get; set; }
     protected override async Task OnInitializedAsync()
     {
         await base.OnInitializedAsync();
@@ -31,6 +33,15 @@
         {
             NavigationManager.NavigateTo($"/");
         }
+        
+    }
+    public void NavigateToLogInPage()
+    {
+        NavigationManager.NavigateTo("/login");
+    }
+    public void NavigateToRegisterPage()
+    {
+        NavigationManager.NavigateTo("/register");
     }
 
 }
