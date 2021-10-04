@@ -10,7 +10,7 @@ namespace FileData
     {
         // public IList<Family> Families { get; private set; }
         public IList<Adult> Adults { get; private set; }
-        public IList<User> Users { get;}
+        public IList<User> Users { get; private set; }
 
         //private readonly string familiesFile = "families.json";
         private readonly string adultsFile = "adults.json";

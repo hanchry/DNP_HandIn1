@@ -1,0 +1,27 @@
+﻿@page "/AddAdult"
+@using FileData
+@inject IFileReader FileReader
+@inject NavigationManager NavigationManager
+
+<h3>AddAdultList</h3>
+
+
+<EditForm Model="@AdultToAdd" OnValidSubmit="@AddNewAdult">
+    <DataAnnotationsValidator/> <ValidationSummary/>
+    <div class="form-group"> First name:<br/> <InputText @bind-Value="AdultToAdd.FirstName"/> </div>
+    <div class="form-group"> Last name:<br/> <InputText @bind-Value="AdultToAdd.LastName"/> </div>
+    <div class="form-group"> Hair color:<br/> <InputText @bind-Value="AdultToAdd.HairColor"/> </div>
+    <div class="form-group"> Eye color:<br/> <InputText @bind-Value="AdultToAdd.EyeColor"/> </div>
+    <div class="form-group"> Age:<br/> <InputNumber @bind-Value="AdultToAdd.Age"/> </div>
+    <div class="form-group"> Weight:<br/> <InputNumber @bind-Value="AdultToAdd.Weight"/> </div>
+    <div class="form-group"> Height:<br/> <InputNumber @bind-Value="AdultToAdd.Height"/> </div>
+    <div class="form-group"> Sex:
+        <InputSelect @bind-Value="AdultToAdd.Sex">
+            <option value=""></option>
+            <option value="M">Male</option>
+            <option value="F">Female</option>
+        </InputSelect></div>
+
+    <p class="actions"> <button class="btn btn-outline-dark" type="submit">Create</button> </p>
+</EditForm>
+

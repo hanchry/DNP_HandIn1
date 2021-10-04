@@ -7,5 +7,6 @@ namespace FileData
     {
         IList<Adult> GetAdults();
         IList<User> GetUsers();
+        void AddAdult(Adult adult);
     }
 }
