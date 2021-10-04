@@ -34,7 +34,6 @@ namespace HandIn1
             services.AddServerSideBlazor();
             services.AddSingleton<IFileReader, FileReader>();
             services.AddScoped<IUserService, UserService>();
-            
             services.AddScoped<AuthenticationStateProvider, CustomAuthenticationStateProvider>();
         }
 
