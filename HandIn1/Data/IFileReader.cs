@@ -9,5 +9,6 @@ namespace FileData
         IList<User> GetUsers();
         void AddAdult(Adult adult);
         void RemoveAdult(Adult adult);
+        Adult GetAdult(int Id);
     }
 }

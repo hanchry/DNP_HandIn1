@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using Models;
 
 namespace FileData
@@ -32,6 +33,11 @@ namespace FileData
         {
             FileContext.Adults.Remove(adult);
             FileContext.SaveChanges();
+        }
+
+        public Adult GetAdult(int Id)
+        {
+            return FileContext.Adults.FirstOrDefault(adult => adult.Id==Id);
         }
     }
 }

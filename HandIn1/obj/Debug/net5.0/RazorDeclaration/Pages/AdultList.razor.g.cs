@@ -89,6 +89,13 @@ using FileData;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 3 "C:\Users\hanch\OneDrive\Skola\semester3\DNP1\DNP1 programs\Session5\DNP_HandIn1\HandIn1\Pages\AdultList.razor"
+using HandIn1.Data;
+
+#line default
+#line hidden
+#nullable disable
     [Microsoft.AspNetCore.Components.RouteAttribute("/AdultList")]
     public partial class AdultList : Microsoft.AspNetCore.Components.ComponentBase
     {

@@ -1,5 +1,6 @@
 ﻿@page "/AdultList"
 @using FileData
+@using HandIn1.Data
 <h3>AdultList</h3>
 
 @inject IFileReader fileReader
@@ -18,7 +19,7 @@ else
 {
     
     <table class="table">
-        <thead >
+        <thead class="table-primary">
         <tr>
             <th>Id</th>
             <th>FirstName</th>
@@ -37,7 +38,7 @@ else
                 <td>@item.LastName</td>
                 <td>@item.Age</td>
                 <td>@item.Sex</td>
-            <td><a class="btn btn-primary" @onclick="() => NavigateToAdultView()">View</a>  |
+            <td><a class="btn btn-primary" @onclick="() => NavigateToAdultView(item.Id)">View</a>  |
                 <a class="btn btn-danger" @onclick="() => DeleteAdult(item)">Delete</a></td>
             </tr>
         }

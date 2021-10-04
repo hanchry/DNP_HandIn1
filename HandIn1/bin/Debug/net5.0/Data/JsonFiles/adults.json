@@ -214,13 +214,14 @@
       "JobTitle": "Call Center Agent",
       "Salary": 20308
     },
+    "Age": 0,
+    "Sex": "M",
     "Id": 14,
     "FirstName": "Isiah",
     "LastName": "Esparza",
     "HairColor": "Brown",
     "EyeColor": "Brown",
     "Weight": 81.8,
-    "Height": 172,
-    "Sex": "M"
+    "Height": 172
   }
 ]

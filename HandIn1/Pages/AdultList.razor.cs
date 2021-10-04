@@ -15,11 +15,14 @@ namespace HandIn1.Pages
         private IList<Adult> allAdults;
         private IList<Adult> toShow;
 
+        private AdultView AdultView;
+
         private string? firstName;
         protected override async Task OnInitializedAsync()
         {
             allAdults = fileReader.GetAdults();
             toShow = allAdults;
+            AdultView = new AdultView();
         }
         
         public void FindByName(ChangeEventArgs changeEventArgs)
@@ -45,9 +48,9 @@ namespace HandIn1.Pages
             fileReader.RemoveAdult(adult);
         }
 
-        public void NavigateToAdultView()
+        public void NavigateToAdultView(int id)
         {
-            NavMgr.NavigateTo("AdultView");
+            NavMgr.NavigateTo($"AdultView/{id}");
         }
         
         

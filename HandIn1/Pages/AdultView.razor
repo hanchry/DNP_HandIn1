@@ -1,6 +1,75 @@
-﻿@page "/AdultView"
-<h3>AdultView</h3>
+﻿@page "/AdultView/{Id:int}"
+@using HandIn1.Data
+@using FileData
+@inject NavigationManager NavMgr
+@inject IFileReader fileReader
 
-@code {
-    
-}
+<h3>Adult</h3>
+
+
+<div class="card-body pt-0">
+    <table class="table table-bordered">
+        <tr>
+            <th width="30%">ID</th>
+            <td width="2%">:</td>
+            <td>@AdultToView.Id</td>
+        </tr>
+        <tr>
+            <th width="30%">First name</th>
+            <td width="2%">:</td>
+            <td>@AdultToView.FirstName</td>
+        </tr>
+        <tr>
+            <th width="30%">Last name</th>
+            <td width="2%">:</td>
+            <td>@AdultToView.LastName</td>
+        </tr>
+        <tr>
+            <th width="30%">Hair color</th>
+            <td width="2%">:</td>
+            <td>@AdultToView.HairColor</td>
+        </tr>
+        <tr>
+            <th width="30%">Eye color</th>
+            <td width="2%">:</td>
+            <td>@AdultToView.EyeColor</td>
+        </tr>
+        <tr>
+            <th width="30%">Age</th>
+            <td width="2%">:</td>
+            <td>@AdultToView.Age</td>
+        </tr>
+        <tr>
+            <th width="30%">Weight</th>
+            <td width="2%">:</td>
+            <td>@AdultToView.Weight</td>
+        </tr>
+        <tr>
+            <th width="30%">Height</th>
+            <td width="2%">:</td>
+            <td>@AdultToView.Height</td>
+        </tr>
+        <tr>
+            <th width="30%">Gender</th>
+            <td width="2%">:</td>
+            <td>@AdultToView.Sex</td>
+        </tr>
+    </table>
+</div>
+
+<h3>Job</h3>
+
+<div class="card-body pt-0">
+    <table class="table table-bordered">
+        <tr>
+            <th width="30%">Job</th>
+            <td width="2%">:</td>
+            <td>@AdultToView.JobTitle.JobTitle</td>
+        </tr>
+        <tr>
+            <th width="30%">Salary</th>
+            <td width="2%">:</td>
+            <td>@AdultToView.JobTitle.Salary</td>
+        </tr>
+    </table>
+</div>
