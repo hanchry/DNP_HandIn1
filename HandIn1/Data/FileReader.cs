@@ -27,5 +27,11 @@ namespace FileData
             FileContext.Adults.Add(adult);
             FileContext.SaveChanges();
         }
+
+        public void RemoveAdult(Adult adult)
+        {
+            FileContext.Adults.Remove(adult);
+            FileContext.SaveChanges();
+        }
     }
 }

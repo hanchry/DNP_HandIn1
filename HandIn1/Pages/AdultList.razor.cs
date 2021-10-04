@@ -18,7 +18,7 @@ namespace HandIn1.Pages
         private string? firstName;
         protected override async Task OnInitializedAsync()
         {
-            allAdults = adultFile.GetAdults();
+            allAdults = fileReader.GetAdults();
             toShow = allAdults;
         }
         
@@ -40,8 +40,15 @@ namespace HandIn1.Pages
             toShow = allAdults.Where(adult => (adult.FirstName.Contains(firstName))).ToList();
         }
 
-        
-        
+        public void DeleteAdult(Adult adult)
+        {
+            fileReader.RemoveAdult(adult);
+        }
+
+        public void NavigateToAdultView()
+        {
+            NavMgr.NavigateTo("AdultView");
+        }
         
         
     }
