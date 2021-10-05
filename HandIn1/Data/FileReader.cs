@@ -39,5 +39,30 @@ namespace FileData
         {
             return FileContext.Adults.FirstOrDefault(adult => adult.Id==Id);
         }
+
+        public void RemoveJob(Adult adult)
+        {
+            foreach (var x in GetAdults())
+            {
+                if (x.Id == adult.Id)
+                {
+                    x.JobTitle.JobTitle = "no job";
+                    x.JobTitle.Salary = 0;
+                }
+            }
+            FileContext.SaveChanges();
+        }
+
+        public void AddJob(Adult adult)
+        {
+            foreach (var x in GetAdults())
+            {
+                if (x.Id == adult.Id)
+                {
+                    x.JobTitle = adult.JobTitle;
+                }
+            }
+            
+        }
     }
 }

@@ -59,17 +59,30 @@
 
 <h3>Job</h3>
 
-<div class="card-body pt-0">
-    <table class="table table-bordered">
-        <tr>
-            <th width="30%">Job</th>
-            <td width="2%">:</td>
-            <td>@AdultToView.JobTitle.JobTitle</td>
-        </tr>
-        <tr>
-            <th width="30%">Salary</th>
-            <td width="2%">:</td>
-            <td>@AdultToView.JobTitle.Salary</td>
-        </tr>
-    </table>
-</div>
+@if (AdultToView.JobTitle.JobTitle != "no job")
+{
+    <div class="card-body pt-0">
+        <table class="table table-bordered">
+            <tr>
+                <th width="30%">Job</th>
+                <td width="2%">:</td>
+                <td>@AdultToView.JobTitle.JobTitle</td>
+            </tr>
+            <tr>
+                <th width="30%">Salary</th>
+                <td width="2%">:</td>
+                <td>@AdultToView.JobTitle.Salary</td>
+            </tr>
+        </table>
+    </div>
+    <a class="btn btn-danger" @onclick="() => DeleteJob()">Delete</a>
+}
+else
+{
+    <EditForm Model="@AdultToView" OnValidSubmit="@AddJob">
+        <DataAnnotationsValidator/> <ValidationSummary/>
+        <div class="form-group"> Name:<br/> <InputText @bind-Value="AdultToView.JobTitle.JobTitle"/> </div>
+        <div class="form-group"> Salary:<br/> <InputNumber @bind-Value="AdultToView.JobTitle.Salary"/> </div>
+        <p class="actions"> <button class="btn btn-outline-success" type="submit">Create</button> </p>
+    </EditForm>
+}

@@ -16,5 +16,15 @@ namespace HandIn1.Pages
         {
             AdultToView = fileReader.GetAdult(Id);
         }
+
+        public void DeleteJob()
+        {
+            fileReader.RemoveJob(AdultToView);
+        }
+
+        public void AddJob()
+        {
+            fileReader.AddJob(AdultToView);
+        }
     }
 }
