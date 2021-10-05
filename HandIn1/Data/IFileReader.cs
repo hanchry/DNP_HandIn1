@@ -8,5 +8,9 @@ namespace FileData
         IList<Adult> GetAdults();
         IList<User> GetUsers();
         void AddAdult(Adult adult);
+        void RemoveAdult(Adult adult);
+        Adult GetAdult(int Id);
+        void RemoveJob(Adult adult);
+        void AddJob(Adult adult);
     }
 }

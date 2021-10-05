@@ -1,12 +1,13 @@
 ﻿@page "/AdultList"
 @using FileData
+@using HandIn1.Data
 <h3>AdultList</h3>
 
-@inject IFileReader adultFile
+@inject IFileReader fileReader
 @inject NavigationManager NavMgr
 
 <p>
-     Filter by first name: <input type="text" @oninput="@((arg) => FindByName(arg))" style="width:50px"/>
+    Filter by first name: <input type="text" @oninput="@((arg) => FindByName(arg))" style="width:50px"/>
 </p>
 
 
@@ -16,14 +17,16 @@
 }
 else
 {
+    
     <table class="table">
-        <thead>
+        <thead class="table-primary">
         <tr>
             <th>Id</th>
             <th>FirstName</th>
             <th>LastName</th>
             <th>Age</th>
             <th>Sex</th>
+            <th>Action</th>
         </tr>
         </thead>
         <tbody>
@@ -35,11 +38,10 @@ else
                 <td>@item.LastName</td>
                 <td>@item.Age</td>
                 <td>@item.Sex</td>
-        
+            <td><a class="btn btn-primary" @onclick="() => NavigateToAdultView(item.Id)">View</a>  |
+                <a class="btn btn-danger" @onclick="() => DeleteAdult(item)">Delete</a></td>
             </tr>
         }
         </tbody>
     </table>
 }
-
-
