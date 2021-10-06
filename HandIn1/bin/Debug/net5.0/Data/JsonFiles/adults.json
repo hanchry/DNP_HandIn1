@@ -1,8 +1,8 @@
 [
   {
     "JobTitle": {
-      "JobTitle": "Mascot",
-      "Salary": 99821
+      "JobTitle": "asd",
+      "Salary": 222
     },
     "Age": 58,
     "Sex": "F",
@@ -223,5 +223,20 @@
     "EyeColor": "Brown",
     "Weight": 81.8,
     "Height": 172
+  },
+  {
+    "JobTitle": {
+      "JobTitle": "no job",
+      "Salary": 0
+    },
+    "Age": 111,
+    "Sex": "M",
+    "Id": 15,
+    "FirstName": "a",
+    "LastName": "a",
+    "HairColor": "a",
+    "EyeColor": "a",
+    "Weight": 1,
+    "Height": 1
   }
 ]

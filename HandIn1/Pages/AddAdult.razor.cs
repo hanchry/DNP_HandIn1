@@ -6,8 +6,11 @@ namespace HandIn1.Pages
     public partial class AddAdult:ComponentBase
     {
         private Adult AdultToAdd = new Adult();
+        private Job AdultsJob = new Job();
         private void AddNewAdult()
         {
+
+            AdultToAdd.JobTitle = AdultsJob;
             AdultToAdd.Id = getNewId();
             FileReader.AddAdult(AdultToAdd); 
             NavigationManager.NavigateTo("/AdultList");
