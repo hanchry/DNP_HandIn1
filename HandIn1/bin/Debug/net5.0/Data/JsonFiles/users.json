@@ -6,5 +6,29 @@
   {
     "UserName": "aaa",
     "Password": "aaa"
+  },
+  {
+    "UserName": "Nick01",
+    "Password": "Hello123"
+  },
+  {
+    "UserName": "Andrej02",
+    "Password": "Hello1234"
+  },
+  {
+    "UserName": "Hello1234",
+    "Password": "Jay12345"
+  },
+  {
+    "UserName": "Andrei05",
+    "Password": "Hello1234"
+  },
+  {
+    "UserName": "Aloha15",
+    "Password": "Nick0987"
+  },
+  {
+    "UserName": "saa",
+    "Password": "Nick1231"
   }
 ]

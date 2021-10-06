@@ -44,7 +44,8 @@ namespace FileData
             //     outputFile.Write(jsonFamilies);
             // }
 
-            // storing persons
+            
+            //Sending user IList to users.json file
             string jsonAdults = JsonSerializer.Serialize(Adults, new JsonSerializerOptions
             {
                 WriteIndented = true
@@ -52,6 +53,16 @@ namespace FileData
             using (StreamWriter outputFile = new StreamWriter(adultsFile, false))
             {
                 outputFile.Write(jsonAdults);
+            }
+            
+            //Sending User IList to users.json file
+            string jsonUsers = JsonSerializer.Serialize(Users, new JsonSerializerOptions
+            {
+                WriteIndented = true
+            });
+            using (StreamWriter outputFile = new StreamWriter(usersFile, false))
+            {
+                outputFile.Write(jsonUsers);
             }
         }
     }

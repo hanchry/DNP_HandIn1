@@ -17,12 +17,20 @@ namespace FileData
         {
             return FileContext.Adults;
         }
-
+        public User GetUser(string userName)
+        {
+            return FileContext.Users.FirstOrDefault(user => user.UserName.Equals(userName));
+        }
         public IList<User> GetUsers()
         {
             return FileContext.Users;
         }
-
+        public void AddUser(User user)
+        {
+            FileContext.Users.Add(user);
+            FileContext.SaveChanges();
+        }
+        
         public void AddAdult(Adult adult)
         {
             FileContext.Adults.Add(adult);
@@ -64,5 +72,7 @@ namespace FileData
             }
             
         }
+
+        
     }
 }
