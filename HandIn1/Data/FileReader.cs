@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using Models;
 
@@ -50,27 +51,17 @@ namespace FileData
 
         public void RemoveJob(Adult adult)
         {
-            foreach (var x in GetAdults())
-            {
-                if (x.Id == adult.Id)
-                {
-                    x.JobTitle.JobTitle = "no job";
-                    x.JobTitle.Salary = 0;
-                }
-            }
+            Adult toRemove = GetAdults().First(t => t.Id == adult.Id);
+            toRemove.JobTitle.JobTitle = "no job";
+            toRemove.JobTitle.Salary = 0;
             FileContext.SaveChanges();
         }
 
         public void AddJob(Adult adult)
         {
-            foreach (var x in GetAdults())
-            {
-                if (x.Id == adult.Id)
-                {
-                    x.JobTitle = adult.JobTitle;
-                }
-            }
-            
+            Adult toAdd = GetAdults().First(t => t.Id == adult.Id);
+            toAdd.JobTitle = adult.JobTitle;
+            FileContext.SaveChanges();
         }
 
         
