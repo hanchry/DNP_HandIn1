@@ -14,15 +14,13 @@ namespace HandIn1.Pages
         
         private IList<Adult> allAdults;
         private IList<Adult> toShow;
-
-        private AdultView AdultView;
+        
 
         private string? firstName;
         protected override async Task OnInitializedAsync()
         {
             allAdults = fileReader.GetAdults();
             toShow = allAdults;
-            AdultView = new AdultView();
         }
         
         public void FindByName(ChangeEventArgs changeEventArgs)
@@ -41,6 +39,11 @@ namespace HandIn1.Pages
         public void ExecuteFilter()
         {
             toShow = allAdults.Where(adult => (adult.FirstName.Contains(firstName))).ToList();
+        }
+
+        public void EditAdult(int id)
+        {
+            NavMgr.NavigateTo($"EditAdult/{id}");
         }
 
         public void DeleteAdult(Adult adult)

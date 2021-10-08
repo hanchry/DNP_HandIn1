@@ -22,6 +22,14 @@ namespace FileData
         {
             return FileContext.Users.FirstOrDefault(user => user.UserName.Equals(userName));
         }
+
+        public void UpdateAdult(Adult adult)
+        {
+            Adult adultToUpdate = GetAdults().First(t => t.Id == adult.Id);
+            adultToUpdate = adult;
+            FileContext.SaveChanges();
+        }
+
         public IList<User> GetUsers()
         {
             return FileContext.Users;
