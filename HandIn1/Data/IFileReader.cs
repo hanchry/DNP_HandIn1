@@ -12,5 +12,8 @@ namespace FileData
         Adult GetAdult(int Id);
         void RemoveJob(Adult adult);
         void AddJob(Adult adult);
+        void AddUser(User user);
+        User GetUser(string userName);
+        
     }
 }
