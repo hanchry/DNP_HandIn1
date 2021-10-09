@@ -11,14 +11,17 @@ namespace FileData
         // public IList<Family> Families { get; private set; }
         public IList<Adult> Adults { get; private set; }
         public IList<User> Users { get; private set; }
+        public IList<Family> Families { get; set; }
 
         //private readonly string familiesFile = "families.json";
         private readonly string adultsFile = "Data/JsonFiles/adults.json";
         private readonly string usersFile = "Data/JsonFiles/users.json";
+        private readonly string familiesFile = "Data/JsonFiles/families.json";
+
 
         public FileContext()
         {
-            // Families = File.Exists(familiesFile) ? ReadData<Family>(familiesFile) : new List<Family>();
+            Families = File.Exists(familiesFile) ? ReadData<Family>(familiesFile) : new List<Family>();
             Adults = File.Exists(adultsFile) ? ReadData<Adult>(adultsFile) : new List<Adult>();
             Users = File.Exists(adultsFile) ? ReadData<User>(usersFile) : new List<User>();
         }
@@ -30,7 +33,7 @@ namespace FileData
                 return JsonSerializer.Deserialize<List<T>>(jsonReader.ReadToEnd());
             }
         }
-        
+
 
         public void SaveChanges()
         {
@@ -43,7 +46,16 @@ namespace FileData
             // {
             //     outputFile.Write(jsonFamilies);
             // }
-
+            
+            //Sending family IList to families.json file
+            string jsonFamilies = JsonSerializer.Serialize(Families, new JsonSerializerOptions
+            {
+                WriteIndented = true
+            });
+            using (StreamWriter outputFile = new StreamWriter(adultsFile, false))
+            {
+                outputFile.Write(jsonFamilies);
+            }
             
             //Sending user IList to users.json file
             string jsonAdults = JsonSerializer.Serialize(Adults, new JsonSerializerOptions
@@ -54,7 +66,7 @@ namespace FileData
             {
                 outputFile.Write(jsonAdults);
             }
-            
+
             //Sending User IList to users.json file
             string jsonUsers = JsonSerializer.Serialize(Users, new JsonSerializerOptions
             {

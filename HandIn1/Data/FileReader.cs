@@ -1,6 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
+using System.Xml.Serialization;
 using Models;
 
 namespace FileData
@@ -18,6 +18,12 @@ namespace FileData
         {
             return FileContext.Adults;
         }
+
+        public IList<Adult> GetAdults(Family family)
+        {
+            throw new System.NotImplementedException();
+        }
+
         public User GetUser(string userName)
         {
             return FileContext.Users.FirstOrDefault(user => user.UserName.Equals(userName));
@@ -28,6 +34,104 @@ namespace FileData
             Adult adultToUpdate = GetAdults().First(t => t.Id == adult.Id);
             adultToUpdate = adult;
             FileContext.SaveChanges();
+        }
+
+
+        public IList<Family> GetFamilies()
+        {
+            return FileContext.Families;
+        }
+
+        public Family GetFamily(int id)
+        {
+            return FileContext.Families.FirstOrDefault(family => family.Id==id);
+
+        }
+
+        public void AddFamily(Family family)
+        {
+            FileContext.Families.Add(family);
+            FileContext.SaveChanges();
+        }
+
+        public void RemoveFamily(Family family)
+        {
+            FileContext.Families.Remove(family);
+            FileContext.SaveChanges();
+        }
+
+        public void AddPet(Pet pet, int FamilyId)
+        {
+            
+        }
+
+        public void RemovePet(Pet pet)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public void AddChild(Child child, int FamilyId)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public void RemoveChild(Child child)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public void AddInterest(Interest interest)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public IList<Interest> getInterests(Child child)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public void AddPet(Pet pet,Child child)
+        {
+            child.Pets.Add(pet);
+            FileContext.SaveChanges();
+        }
+
+        public void RemovePet(Pet pet,int familyId)
+        {
+            GetFamily(familyId).Pets.Remove(pet);
+        }
+        public void AddChild(Child child, Family family)
+        {
+            family.Children.Add(child);
+            FileContext.SaveChanges();
+        }
+
+        public void RemoveChild(Child child,Family family)
+        {
+            family.Children.Remove(child);
+            FileContext.SaveChanges();
+        }
+
+        public void AddInterest(Child child,Interest interest)
+        {
+            child.Interests.Add(interest);
+            FileContext.SaveChanges();
+
+        }
+
+        public IList<Child> GetChildrens(Family family)
+        {
+            return family.Children;
+        }
+
+        public IList<Pet> GetPets(Family family)
+        {
+            return family.Pets;
+        }
+
+        public IList<Pet> GetPets(Child child)
+        {
+            return child.Pets;
         }
 
         public IList<User> GetUsers()
@@ -71,6 +175,7 @@ namespace FileData
             toAdd.JobTitle = adult.JobTitle;
             FileContext.SaveChanges();
         }
+       
 
         
     }

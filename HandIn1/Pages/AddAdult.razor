@@ -1,4 +1,5 @@
 ﻿@page "/AddAdult"
+@attribute [Authorize(Policy = "MustBeLoggedIn")]
 @using FileData
 @inject IFileReader FileReader
 @inject NavigationManager NavigationManager

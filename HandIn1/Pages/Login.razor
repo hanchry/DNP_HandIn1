@@ -4,7 +4,7 @@
 
 @inject AuthenticationStateProvider AuthenticationStateProvider
 @inject NavigationManager NavigationManager
-
+<h2>Login</h2>
 <AuthorizeView>
     <NotAuthorized>
         <div class="form-group">
@@ -24,19 +24,15 @@
             Sign up
         </button>
     </NotAuthorized>
-    <Authorized>
-        <h3>@context.User.Identity.Name</h3>
-        <button class="btn btn-outline-dark" href="" @onclick="PerformLogout">
-            Log out
-        </button>
-    </Authorized>
 </AuthorizeView>
 
 @code {
     private string username;
     private string password;
     private string errorMessage;
-
+    
+    
+    
     public async Task PerformLogin()
     {
         errorMessage = "";
@@ -45,6 +41,7 @@
             ((CustomAuthenticationStateProvider) AuthenticationStateProvider).ValidateLogin(username, password);
             username = "";
             password = "";
+            NavigationManager.NavigateTo("/");
         }
         catch (Exception e)
         {
@@ -72,17 +69,4 @@
         NavigationManager.NavigateTo("/register");
     }
     
-    [CascadingParameter]
-    protected Task<AuthenticationState> AuthStat { get; set; }
-    protected override async Task OnInitializedAsync()
-    {
-        await base.OnInitializedAsync();
-        var user = (await AuthStat).User;
-        if (!user.Identity.IsAuthenticated)
-        {
-            NavigationManager.NavigateTo($"/");
-        }
-        
-    }
-
 }
