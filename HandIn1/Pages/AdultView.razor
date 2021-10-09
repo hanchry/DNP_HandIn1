@@ -1,5 +1,6 @@
 ﻿@page "/AdultView/{Id:int}"
 @using HandIn1.Data
+@attribute [Authorize(Policy = "MustBeLoggedIn")]
 @using FileData
 @inject NavigationManager NavMgr
 @inject IFileReader fileReader

@@ -103,7 +103,9 @@ using HandIn1.Authentication;
     private string username;
     private string password;
     private string errorMessage;
-
+    
+    
+    
     public async Task PerformLogin()
     {
         errorMessage = "";
@@ -139,19 +141,6 @@ using HandIn1.Authentication;
         NavigationManager.NavigateTo("/register");
     }
     
-    [CascadingParameter]
-    protected Task<AuthenticationState> AuthStat { get; set; }
-    protected override async Task OnInitializedAsync()
-    {
-        await base.OnInitializedAsync();
-        var user = (await AuthStat).User;
-        if (!user.Identity.IsAuthenticated)
-        {
-            NavigationManager.NavigateTo($"/");
-        }
-        
-    }
-
 
 #line default
 #line hidden

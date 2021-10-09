@@ -89,6 +89,13 @@ using LoginComponent;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 3 "D:\Semester3\DNP31Y\DNP_HandIn1\HandIn1\Shared\MainLayout.razor"
+using HandIn1.Authentication;
+
+#line default
+#line hidden
+#nullable disable
     public partial class MainLayout : LayoutComponentBase
     {
         #pragma warning disable 1998
@@ -97,35 +104,47 @@ using LoginComponent;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 23 "D:\Semester3\DNP31Y\DNP_HandIn1\HandIn1\Shared\MainLayout.razor"
+#line 47 "D:\Semester3\DNP31Y\DNP_HandIn1\HandIn1\Shared\MainLayout.razor"
       
 
     [CascadingParameter]
     protected Task<AuthenticationState> AuthStat { get; set; }
+
     protected override async Task OnInitializedAsync()
     {
         await base.OnInitializedAsync();
         var user = (await AuthStat).User;
         if (!user.Identity.IsAuthenticated)
         {
-            NavigationManager.NavigateTo($"/");
+            NavigationManager.NavigateTo($"/login");
         }
-        
+        else
+        {
+            NavigationManager.NavigateTo("");
+        }
     }
-    public void NavigateToLogInPage()
+
+    public async Task PerformLogout()
+    {
+        ((CustomAuthenticationStateProvider) AuthenticationStateProvider).Logout();
+        NavigationManager.NavigateTo("/");
+    }
+
+    public void NavigateToLogin()
     {
         NavigationManager.NavigateTo("/login");
     }
-    public void NavigateToRegisterPage()
+
+    public void NavigateToRegister()
     {
         NavigationManager.NavigateTo("/register");
     }
-    
 
 
 #line default
 #line hidden
 #nullable disable
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private AuthenticationStateProvider AuthenticationStateProvider { get; set; }
         [global::Microsoft.AspNetCore.Components.InjectAttribute] private NavigationManager NavigationManager { get; set; }
     }
 }

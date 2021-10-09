@@ -72,7 +72,7 @@ namespace HandIn1.Authentication
         public void ValidateRegister(string userName, string password)
         {
             Console.WriteLine("Validating sign up");
-            //Username policy
+            
             try
             {
                 Username checkedUsername = new Username(userName);
@@ -81,7 +81,6 @@ namespace HandIn1.Authentication
             }
             catch (Exception e)
             {
-                Console.WriteLine(e);
                 throw e;
             }
 

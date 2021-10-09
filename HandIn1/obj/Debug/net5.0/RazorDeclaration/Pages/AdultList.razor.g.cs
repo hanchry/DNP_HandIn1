@@ -83,15 +83,22 @@ using HandIn1.Shared;
 #line hidden
 #nullable disable
 #nullable restore
-#line 2 "D:\Semester3\DNP31Y\DNP_HandIn1\HandIn1\Pages\AdultList.razor"
+#line 3 "D:\Semester3\DNP31Y\DNP_HandIn1\HandIn1\Pages\AdultList.razor"
 using FileData;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 3 "D:\Semester3\DNP31Y\DNP_HandIn1\HandIn1\Pages\AdultList.razor"
+#line 4 "D:\Semester3\DNP31Y\DNP_HandIn1\HandIn1\Pages\AdultList.razor"
 using HandIn1.Data;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 2 "D:\Semester3\DNP31Y\DNP_HandIn1\HandIn1\Pages\AdultList.razor"
+           [Authorize(Policy = "MustBeLoggedIn")]
 
 #line default
 #line hidden

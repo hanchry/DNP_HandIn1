@@ -83,14 +83,14 @@ using HandIn1.Shared;
 #line hidden
 #nullable disable
 #nullable restore
-#line 3 "D:\Semester3\DNP31Y\DNP_HandIn1\HandIn1\Pages\Register.razor"
+#line 2 "D:\Semester3\DNP31Y\DNP_HandIn1\HandIn1\Pages\Register.razor"
 using HandIn1.Authentication;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 4 "D:\Semester3\DNP31Y\DNP_HandIn1\HandIn1\Pages\Register.razor"
+#line 3 "D:\Semester3\DNP31Y\DNP_HandIn1\HandIn1\Pages\Register.razor"
 using LoginComponent;
 
 #line default
@@ -105,35 +105,38 @@ using LoginComponent;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 25 "D:\Semester3\DNP31Y\DNP_HandIn1\HandIn1\Pages\Register.razor"
+#line 26 "D:\Semester3\DNP31Y\DNP_HandIn1\HandIn1\Pages\Register.razor"
        
     private string username;
     private string password;
-   // private string domain;
-  //  private int securityLevel;
+    // private string domain;
+    //  private int securityLevel;
     private string errorMessage;
-    
+
     [CascadingParameter]
-    protected Task<AuthenticationState> AuthState { get; set; }    
+    protected Task<AuthenticationState> AuthState { get; set; }
+
     public async Task PerformRegister()
     {
         errorMessage = "";
         try
         {
             ((CustomAuthenticationStateProvider) AuthenticationStateProvider).ValidateRegister(username, password);
+            ((CustomAuthenticationStateProvider) AuthenticationStateProvider).ValidateLogin(username, password);
             username = "";
             password = "";
-            NavigationManager.NavigateTo("/login");
+            NavigationManager.NavigateTo("/");
         }
         catch (Exception e)
         {
             errorMessage = e.Message;
         }
-        
     }
-    
 
-   
+
+
+
+
 
 
 #line default

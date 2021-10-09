@@ -13,6 +13,8 @@ using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Models;
+
 // using HandIn1.Data;
 
 namespace HandIn1
@@ -35,6 +37,10 @@ namespace HandIn1
             services.AddSingleton<IFileReader, FileReader>();
             services.AddScoped<IUserService, UserService>();
             services.AddScoped<AuthenticationStateProvider, CustomAuthenticationStateProvider>();
+            services.AddAuthorization(options =>
+            {
+                options.AddPolicy("MustBeLoggedIn", a => a.RequireAuthenticatedUser());
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
