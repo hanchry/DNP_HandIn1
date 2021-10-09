@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using 
+    System.Collections.Generic;
 using System.Linq;
 using System.Xml.Serialization;
 using Models;
@@ -62,7 +63,7 @@ namespace FileData
 
         public void AddPet(Pet pet, int FamilyId)
         {
-            
+            GetFamily(FamilyId).Pets.Add(pet);
         }
 
         public void RemovePet(Pet pet)
