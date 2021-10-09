@@ -24,12 +24,6 @@
             Sign up
         </button>
     </NotAuthorized>
-    <Authorized>
-        <h3>@context.User.Identity.Name</h3>
-        <button class="btn btn-outline-dark" href="" @onclick="PerformLogout">
-            Log out
-        </button>
-    </Authorized>
 </AuthorizeView>
 
 @code {
@@ -47,6 +41,7 @@
             ((CustomAuthenticationStateProvider) AuthenticationStateProvider).ValidateLogin(username, password);
             username = "";
             password = "";
+            NavigationManager.NavigateTo("/");
         }
         catch (Exception e)
         {

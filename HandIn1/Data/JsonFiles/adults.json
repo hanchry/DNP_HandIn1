@@ -1,21 +1,6 @@
 [
   {
     "JobTitle": {
-      "JobTitle": "asd",
-      "Salary": 200
-    },
-    "Age": 58,
-    "Sex": "F",
-    "Id": 0,
-    "FirstName": "Yasmine",
-    "LastName": "Baxter",
-    "HairColor": "Black",
-    "EyeColor": "Brown",
-    "Weight": 39.8,
-    "Height": 174
-  },
-  {
-    "JobTitle": {
       "JobTitle": "Front End Web Developer",
       "Salary": 66408
     },
@@ -31,8 +16,8 @@
   },
   {
     "JobTitle": {
-      "JobTitle": "Business Development Manager",
-      "Salary": 71456
+      "JobTitle": "no job",
+      "Salary": 0
     },
     "Age": 34,
     "Sex": "F",
@@ -73,21 +58,6 @@
     "EyeColor": "Brown",
     "Weight": 106,
     "Height": 172
-  },
-  {
-    "JobTitle": {
-      "JobTitle": "Teacher",
-      "Salary": 91588
-    },
-    "Age": 48,
-    "Sex": "M",
-    "Id": 5,
-    "FirstName": "Soham",
-    "LastName": "Fitzgerald",
-    "HairColor": "Black",
-    "EyeColor": "Grey",
-    "Weight": 131.6,
-    "Height": 177
   },
   {
     "JobTitle": {
