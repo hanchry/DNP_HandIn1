@@ -82,6 +82,13 @@ using HandIn1.Shared;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 3 "D:\Semester3\DNP31Y\DNP_HandIn1\HandIn1\Pages\Index.razor"
+using HandIn1.Components;
+
+#line default
+#line hidden
+#nullable disable
     [Microsoft.AspNetCore.Components.RouteAttribute("/")]
     public partial class Index : Microsoft.AspNetCore.Components.ComponentBase
     {

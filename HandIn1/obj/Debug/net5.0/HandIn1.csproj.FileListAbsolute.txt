@@ -136,3 +136,7 @@ C:\Users\hanch\OneDrive\Skola\semester3\DNP1\DNP1 programs\Session5\DNP_HandIn1\
 C:\Users\hanch\OneDrive\Skola\semester3\DNP1\DNP1 programs\Session5\DNP_HandIn1\HandIn1\obj\Debug\net5.0\Razor\Pages\EditAdult.razor.g.cs
 D:\Semester3\DNP31Y\DNP_HandIn1\HandIn1\obj\Debug\net5.0\RazorDeclaration\Pages\EditAdult.razor.g.cs
 D:\Semester3\DNP31Y\DNP_HandIn1\HandIn1\obj\Debug\net5.0\Razor\Pages\EditAdult.razor.g.cs
+D:\Semester3\DNP31Y\DNP_HandIn1\HandIn1\obj\Debug\net5.0\RazorDeclaration\Components\Board.razor.g.cs
+D:\Semester3\DNP31Y\DNP_HandIn1\HandIn1\obj\Debug\net5.0\RazorDeclaration\Components\Square.razor.g.cs
+D:\Semester3\DNP31Y\DNP_HandIn1\HandIn1\obj\Debug\net5.0\Razor\Components\Board.razor.g.cs
+D:\Semester3\DNP31Y\DNP_HandIn1\HandIn1\obj\Debug\net5.0\Razor\Components\Square.razor.g.cs
