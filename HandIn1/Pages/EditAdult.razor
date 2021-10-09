@@ -1,0 +1,33 @@
+﻿@page "/EditAdult/{Id:int}"
+@using FileData
+@inject NavigationManager NavMgr
+@inject IFileReader fileReader
+
+<h3>Edit Adult: @Id</h3>
+
+@if (AdultToEdit == null)
+{
+    <em>Todo not found!</em>
+    
+}
+else
+{
+    <EditForm Model="@AdultToEdit" OnValidSubmit="@Save">
+        <DataAnnotationsValidator/> <ValidationSummary/>
+        <div class="form-group"> FirstName:<br/> <InputText @bind-Value="AdultToEdit.FirstName"/> </div>
+        <div class="form-group"> LastName:<br/> <InputText rows="4" @bind-Value="AdultToEdit.LastName"/> </div>
+        <div class="form-group"> HairColor:<br/> <InputText rows="4" @bind-Value="AdultToEdit.HairColor"/> </div>
+        <div class="form-group"> EyeColor:<br/> <InputText rows="4" @bind-Value="AdultToEdit.EyeColor"/> </div>
+        <div class="form-group"> Age:<br/> <InputNumber rows="4" @bind-Value="AdultToEdit.Age"/> </div>
+        <div class="form-group"> Weight:<br/> <InputNumber rows="4" @bind-Value="AdultToEdit.Weight"/> </div>
+        <div class="form-group"> Height:<br/> <InputNumber rows="4" @bind-Value="AdultToEdit.Height"/> </div>
+        <div class="form-group"> Sex:
+                <InputSelect @bind-Value="AdultToEdit.Sex">
+                    <option value=""></option>
+                    <option value="M">Male</option>
+                    <option value="F">Female</option>
+                </InputSelect></div>
+        <p class="actions"> <button class="btn btn-outline-dark" type="submit">Save</button> </p>
+    </EditForm>
+    
+}

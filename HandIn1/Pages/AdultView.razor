@@ -80,10 +80,10 @@
 }
 else
 {
-    <EditForm Model="@AdultToView" OnValidSubmit="@AddJob">
+    <EditForm Model="@job" OnValidSubmit="@AddJob">
         <DataAnnotationsValidator/> <ValidationSummary/>
-        <div class="form-group"> Name:<br/> <InputText @bind-Value="AdultToView.JobTitle.JobTitle"/> </div>
-        <div class="form-group"> Salary:<br/> <InputNumber @bind-Value="AdultToView.JobTitle.Salary"/> </div>
+        <div class="form-group"> Name:<br/> <InputText @bind-Value="job.JobTitle"/> </div>
+        <div class="form-group"> Salary:<br/> <InputNumber @bind-Value="job.Salary"/> </div>
         <p class="actions"> <button class="btn btn-outline-success" type="submit">Create</button> </p>
     </EditForm>
 }

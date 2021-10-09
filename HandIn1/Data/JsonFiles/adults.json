@@ -1,8 +1,8 @@
 [
   {
     "JobTitle": {
-      "JobTitle": "no job",
-      "Salary": 1234
+      "JobTitle": "asd",
+      "Salary": 200
     },
     "Age": 58,
     "Sex": "F",
@@ -91,8 +91,8 @@
   },
   {
     "JobTitle": {
-      "JobTitle": "no job",
-      "Salary": 0
+      "JobTitle": "Service Advisor",
+      "Salary": 72532
     },
     "Age": 44,
     "Sex": "F",
